@@ -10,7 +10,7 @@ const stylesHandler = 'style-loader';
 
 
 const config = {
-    entry: './frontend/index.ts',
+    entry: './frontend/src/index.ts',
     output: {
         path: path.resolve(__dirname, 'dist'),
     },

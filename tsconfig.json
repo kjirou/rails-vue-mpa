@@ -9,6 +9,6 @@
     "target": "es2022"
   },
   "include": [
-    "./frontend/"
+    "./frontend/src/**/*.ts"
   ]
 }
