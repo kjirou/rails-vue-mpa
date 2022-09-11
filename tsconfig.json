@@ -5,6 +5,7 @@
       "es2021"
     ],
     "moduleResolution": "node",
+    "skipLibCheck": true,
     "strict": true,
     "target": "es2022"
   },
