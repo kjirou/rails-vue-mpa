@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/kjirou/rails-vue-mpa/issues"
   },
-  "homepage": "https://github.com/kjirou/rails-vue-mpa#readme"
+  "homepage": "https://github.com/kjirou/rails-vue-mpa#readme",
+  "dependencies": {
+    "vue": "^3.2.36"
+  }
 }
