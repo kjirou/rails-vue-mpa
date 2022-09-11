@@ -1,12 +1,4 @@
 {
-  "name": "my-webpack-project",
-  "version": "1.0.0",
-  "description": "My webpack project",
-  "main": "index.js",
-  "directories": {
-    "lib": "lib",
-    "test": "test"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode=production --node-env=production",
@@ -14,17 +6,6 @@
     "build:prod": "webpack --mode=production --node-env=production",
     "watch": "webpack --watch"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kjirou/rails-vue-mpa.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/kjirou/rails-vue-mpa/issues"
-  },
-  "homepage": "https://github.com/kjirou/rails-vue-mpa#readme",
   "dependencies": {
     "vue": "^3.2.36"
   },
