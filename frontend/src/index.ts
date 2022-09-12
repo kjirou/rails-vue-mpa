@@ -1,7 +1,7 @@
 import {createApp} from 'vue'
 
-import Foo from './Foo.vue'
+import Root from './Root.vue'
 
-const app = createApp(Foo)
+const app = createApp(Root)
 
 app.mount('#nowhere')

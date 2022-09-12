@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "jsx": "preserve",
     "lib": [
       "dom",
       "es2021"
@@ -10,6 +11,7 @@
     "target": "es2022"
   },
   "include": [
-    "./frontend/src/**/*.ts"
+    "./frontend/src/**/*.ts",
+    "./frontend/src/**/*.vue"
   ]
 }
