@@ -1,13 +1,13 @@
 <script lang="ts">
-import {defineComponent} from 'vue'
+import { defineComponent } from "vue";
 
-import Foo from './Foo.vue'
+import Foo from "./Foo.vue";
 
 export default defineComponent({
   components: {
     foo: Foo,
   },
-})
+});
 </script>
 
 <template>
@@ -15,7 +15,7 @@ export default defineComponent({
   <foo
     :a="'a'"
     :b="'b'"
-    :f="(b) => b ? 'T' : 'F'"
+    :f="(b) => (b ? 'T' : 'F')"
     :o="{
       a: 11,
       b: {
