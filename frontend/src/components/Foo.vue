@@ -57,7 +57,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <h1>Foo Component</h1>
+  <h3>Foo Component</h3>
   <ul>
     <li>a = {{ a }}</li>
     <li>b = {{ b }}</li>

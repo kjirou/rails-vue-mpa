@@ -1,16 +1,11 @@
-<script lang="ts">
-import { defineComponent } from "vue";
+<script setup lang="ts">
+// TODO: `<component :is="{componentName}">` requires declarations of component names as variables.
+//       Therefore, it is not possible to separate the page list into different modules.
+import ArticlesIndexPage from "./pages/articles/Index.vue";
 
-import Foo from "./Foo.vue";
-
-export default defineComponent({
-  props: {
-    actionName: { type: String, required: true },
-    controllerPath: { type: String, required: true },
-  },
-  components: {
-    foo: Foo,
-  },
+const props = defineProps({
+  actionName: { type: String, required: true },
+  controllerPath: { type: String, required: true },
 });
 </script>
 
@@ -20,17 +15,5 @@ export default defineComponent({
     <li>controllerPath = {{ controllerPath }}</li>
     <li>actionName = {{ actionName }}</li>
   </ul>
-  <foo
-    :a="'a'"
-    :b="'b'"
-    :f="(b) => (b ? 'T' : 'F')"
-    :o="{
-      a: 11,
-      b: {
-        b1: 222,
-        b2: 'b2',
-      },
-    }"
-    :x="1"
-  />
+  <component :is="ArticlesIndexPage" />
 </template>
