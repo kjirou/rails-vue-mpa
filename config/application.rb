@@ -18,5 +18,8 @@ module RailsVueMpa
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    config.x.frontend_supporter.webpack_output_path = Rails.root.join('public', 'dist')
+    config.x.frontend_supporter.update_webpack_manifest_on_reloading = false
   end
 end

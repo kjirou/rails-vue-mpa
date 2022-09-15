@@ -1,24 +1,27 @@
 {
-  "name": "rails-vue-mpa",
-  "version": "1.0.0",
-  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
-  "main": "index.js",
-  "directories": {
-    "lib": "lib",
-    "test": "test"
-  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode=production --node-env=production",
+    "build:dev": "webpack --mode=development",
+    "build:prod": "webpack --mode=production --node-env=production",
+    "typecheck": "vue-tsc --noEmit",
+    "watch": "webpack --mode=development --watch"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kjirou/rails-vue-mpa.git"
+  "dependencies": {
+    "vue": "^3.2.36"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/kjirou/rails-vue-mpa/issues"
-  },
-  "homepage": "https://github.com/kjirou/rails-vue-mpa#readme"
+  "devDependencies": {
+    "@webpack-cli/generators": "^2.5.0",
+    "css-loader": "^6.7.1",
+    "sass": "^1.54.9",
+    "sass-loader": "^13.0.2",
+    "style-loader": "^3.3.1",
+    "ts-loader": "^9.3.1",
+    "typescript": "^4.8.3",
+    "vue-loader": "^17.0.0",
+    "vue-tsc": "^0.40.13",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-manifest-plugin": "^5.0.0"
+  }
 }
