@@ -4,6 +4,8 @@
     "build": "webpack --mode=production --node-env=production",
     "build:dev": "webpack --mode=development",
     "build:prod": "webpack --mode=production --node-env=production",
+    "prettier:check": "prettier --check .",
+    "prettier:write": "prettier --write .",
     "typecheck": "vue-tsc --noEmit",
     "watch": "webpack --mode=development --watch"
   },
