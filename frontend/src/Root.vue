@@ -2,11 +2,38 @@
 // TODO: `<component :is="{componentName}">` requires declarations of component names as variables.
 //       Therefore, it is not possible to separate the page list into different modules.
 import ArticlesIndexPage from "./pages/articles/Index.vue";
+import ArticlesNewPage from "./pages/articles/New.vue";
+
+const createPageId = (controllerPath: string, actionName: string): string => {
+  return `${controllerPath}-${actionName}`;
+};
 
 const props = defineProps({
   actionName: { type: String, required: true },
   controllerPath: { type: String, required: true },
 });
+
+const pages = {
+  [createPageId("articles", "index")]: ArticlesIndexPage,
+  [createPageId("articles", "new")]: ArticlesNewPage,
+} as const;
+
+/**
+ * @todo Receives `pages` as an argument, not as a closure.
+ *       I could not define correctly the `pages` type.
+ */
+const findPage = (controllerPath: string, actionName: string) => {
+  const pageId = createPageId(controllerPath, actionName);
+  // TODO: TypeScript determines that `pages[pageId]` always returns a value.
+  if (pages.hasOwnProperty(pageId) === false) {
+    throw new Error(
+      `A page for "${controllerPath}#${actionName}" is not defined.`
+    );
+  }
+  return pages[pageId];
+};
+
+const currentPage = findPage(props.controllerPath, props.actionName);
 </script>
 
 <template>
@@ -15,5 +42,5 @@ const props = defineProps({
     <li>controllerPath = {{ controllerPath }}</li>
     <li>actionName = {{ actionName }}</li>
   </ul>
-  <component :is="ArticlesIndexPage" />
+  <component :is="currentPage" />
 </template>
