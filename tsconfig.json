@@ -1,17 +1,11 @@
 {
   "compilerOptions": {
     "jsx": "preserve",
-    "lib": [
-      "dom",
-      "es2021"
-    ],
+    "lib": ["dom", "es2021"],
     "moduleResolution": "node",
     "skipLibCheck": true,
     "strict": true,
     "target": "es2022"
   },
-  "include": [
-    "./frontend/src/**/*.ts",
-    "./frontend/src/**/*.vue"
-  ]
+  "include": ["./frontend/src/**/*.ts", "./frontend/src/**/*.vue"]
 }

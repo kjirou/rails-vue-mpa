@@ -1,9 +1,9 @@
-import {createApp} from 'vue'
+import { createApp } from "vue";
 
-import Root from './Root.vue'
+import Root from "./Root.vue";
 
-const app = createApp(Root)
+const app = createApp(Root);
 
-document.addEventListener('DOMContentLoaded', () => {
-  app.mount('#vue-root')
-})
+document.addEventListener("DOMContentLoaded", () => {
+  app.mount("#vue-root");
+});
