@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   def index
-    render plain: 'ArticlesController#index'
+    # TODO: Configure it as default render.
+    render html: '', layout: true
   end
 end

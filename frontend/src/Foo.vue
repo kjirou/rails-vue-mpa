@@ -65,7 +65,7 @@ export default defineComponent({
     <li>x = {{x}}</li>
     <li>computedStr = {{computedStr}}</li>
     <li>calculateNumbers = {{calculateNumbers(123)}}</li>
-    <li>calculateNumbers = {{/* calculateNumbers('abc') */}}</li>
-    <li>Does not exist = {{/* doesNotExist */}}</li>
+    <li>calculateNumbers = {{/* calculateNumbers('abc') */1}}</li>
+    <li>Does not exist = {{/* doesNotExist */1}}</li>
   </ul>
 </template>

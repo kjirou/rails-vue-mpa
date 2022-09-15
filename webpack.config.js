@@ -1,29 +1,50 @@
 // Generated using webpack-cli https://github.com/webpack/webpack-cli
 
 const path = require('path');
+const {VueLoaderPlugin} = require('vue-loader');
+const {WebpackManifestPlugin} = require('webpack-manifest-plugin');
 
 const isProduction = process.env.NODE_ENV == 'production';
 
+const projectRoot = __dirname;
+const frontendDir = path.resolve(projectRoot, 'frontend');
+const srcDir = path.resolve(frontendDir, 'src');
+const publicDir = path.resolve(projectRoot, 'public');
 
 const stylesHandler = 'style-loader';
 
 
 
 const config = {
-    entry: './frontend/src/index.ts',
+    entry: {
+        webpacked: path.resolve(srcDir, 'index.ts'),
+    },
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        filename: '[name]-[contenthash].js',
+        clean: true,
+        path: path.resolve(publicDir, 'dist'),
+        publicPath: '/dist/',
     },
     plugins: [
-        // Add your plugins here
-        // Learn more about plugins from https://webpack.js.org/configuration/plugins/
+        new VueLoaderPlugin(),
+        new WebpackManifestPlugin(),
     ],
     module: {
         rules: [
             {
-                test: /\.(ts|tsx)$/i,
+                test: /\.vue$/,
+                loader: 'vue-loader',
+                options: {
+                    enableTsInTemplate: false,
+                },
+            },
+            {
+                test: /\.ts$/,
                 loader: 'ts-loader',
                 exclude: ['/node_modules/'],
+                options: {
+                    appendTsSuffixTo: ['\\.vue$'],
+                },
             },
             {
                 test: /\.css$/i,
@@ -37,13 +58,10 @@ const config = {
                 test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
                 type: 'asset',
             },
-
-            // Add your rules for custom modules here
-            // Learn more about loaders from https://webpack.js.org/loaders/
         ],
     },
     resolve: {
-        extensions: ['.tsx', '.ts', '.jsx', '.js', '...'],
+        extensions: ['.ts'],
     },
 };
 

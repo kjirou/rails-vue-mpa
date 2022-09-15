@@ -5,7 +5,7 @@
     "build:dev": "webpack --mode=development",
     "build:prod": "webpack --mode=production --node-env=production",
     "typecheck": "vue-tsc --noEmit",
-    "watch": "webpack --watch"
+    "watch": "webpack --mode=development --watch"
   },
   "dependencies": {
     "vue": "^3.2.36"

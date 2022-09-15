@@ -6,10 +6,10 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application" %>
+    <%= frontend_javascript_tag 'webpacked.js' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div id="vue-root"></div>
   </body>
 </html>

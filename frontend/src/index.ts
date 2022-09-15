@@ -4,4 +4,6 @@ import Root from './Root.vue'
 
 const app = createApp(Root)
 
-app.mount('#nowhere')
+document.addEventListener('DOMContentLoaded', () => {
+  app.mount('#vue-root')
+})
