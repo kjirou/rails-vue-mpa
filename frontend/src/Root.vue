@@ -8,10 +8,11 @@ const createPageId = (controllerPath: string, actionName: string): string => {
   return `${controllerPath}-${actionName}`;
 };
 
-const props = defineProps({
-  actionName: { type: String, required: true },
-  controllerPath: { type: String, required: true },
-});
+interface Props {
+  actionName: string;
+  controllerPath: string;
+}
+const props = defineProps<Props>();
 
 const pages = {
   [createPageId("articles", "index")]: ArticlesIndexPage,
