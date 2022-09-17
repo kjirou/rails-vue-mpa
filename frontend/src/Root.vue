@@ -4,14 +4,15 @@
 import ArticlesIndexPage from "./pages/articles/Index.vue";
 import ArticlesNewPage from "./pages/articles/New.vue";
 
+export interface Props {
+  actionName: string;
+  controllerPath: string;
+}
+
 const createPageId = (controllerPath: string, actionName: string): string => {
   return `${controllerPath}-${actionName}`;
 };
 
-interface Props {
-  actionName: string;
-  controllerPath: string;
-}
 const props = defineProps<Props>();
 
 const pages = {

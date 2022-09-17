@@ -1,6 +1,15 @@
 import { createApp } from "vue";
 
-import Root from "./Root.vue";
+import Root, { Props as RootProps } from "./Root.vue";
+
+/**
+ * NOTE: It converts the RootProps interface to a type for passing to `createApp`.
+ *       `createApp` can not directly receive interface as type for rootProps.
+ */
+type RootPropsType = {
+  actionName: RootProps["actionName"];
+  controllerPath: RootProps["controllerPath"];
+};
 
 /**
  * @todo Extracts and returns initial props.
@@ -30,10 +39,10 @@ document.addEventListener("DOMContentLoaded", () => {
     throw new Error("Can not find the destination of Vue's `app.mount()`.");
   }
   const { controllerPath, actionName } = extractDataFromRails(vueRootElement);
-  // TODO: The following root props are not typed.
-  const app = createApp(Root, {
+  const rootProps: RootPropsType = {
     controllerPath,
     actionName,
-  });
+  };
+  const app = createApp(Root, rootProps);
   app.mount(vueRootElement);
 });

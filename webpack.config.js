@@ -39,6 +39,27 @@ const config = {
         exclude: ["/node_modules/"],
         options: {
           appendTsSuffixTo: ["\\.vue$"],
+          /**
+           * NOTE:
+           * There are two reasons for specifying this option.
+           *
+           * A) To ignore the following errors that occurred during the production build
+           *
+           * ```
+           * npm run build:prod (== webpack --mode=production --node-env=production)
+           * (...omission...)
+           * ERROR in /Users/kjirou/projects/rails-vue-mpa/frontend/src/pages/articles/Index.vue.ts
+           * 19:10-11
+           * [tsl] ERROR in /Users/kjirou/projects/rails-vue-mpa/frontend/src/pages/articles/Index.vue.ts(19,11)
+           * TS7006: Parameter 'b' implicitly has an 'any' type.
+           * (...omission...)
+           * ```
+           *
+           * B) To leave type checking to vue-tsc and Volar
+           *
+           *  Note that Volar assumes that Take Over Mode ( https://github.com/johnsoncodehk/volar/discussions/471 ) is used.
+           */
+          transpileOnly: true,
         },
       },
       {
