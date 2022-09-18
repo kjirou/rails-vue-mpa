@@ -21,5 +21,7 @@ module RailsVueMpa
 
     config.x.frontend_supporter.webpack_output_path = Rails.root.join('public', 'dist')
     config.x.frontend_supporter.update_webpack_manifest_on_reloading = false
+
+    config.x.system_test.browser_kind = ENV.fetch('SYSTEM_TEST_BROWSER_KIND', 'chrome').intern
   end
 end
