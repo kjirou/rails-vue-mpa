@@ -1,5 +1,6 @@
 # rails-vue-mpa
 
+![run-system-tests](https://github.com/kjirou/rails-vue-mpa/actions/workflows/run-system-test.yml/badge.svg)
 ![run-frontend-tests](https://github.com/kjirou/rails-vue-mpa/actions/workflows/run-frontend-tests.yml/badge.svg)
 
 ## :hammer_and_wrench: Development
