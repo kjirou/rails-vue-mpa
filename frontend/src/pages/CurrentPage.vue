@@ -2,7 +2,7 @@
 import Articles_IndexPage from "./articles/Index.vue";
 import Articles_NewPage from "./articles/New.vue";
 
-interface Props {
+export interface Props {
   actionName: string;
   controllerPath: string;
   initialPageData: Object;
