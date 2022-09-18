@@ -1,9 +1,9 @@
 {
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode=production --node-env=production",
     "prettier:check": "prettier --check .",
     "prettier:write": "prettier --write .",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "typecheck": "vue-tsc --noEmit",
     "watch": "webpack --mode=development --watch"
   },
