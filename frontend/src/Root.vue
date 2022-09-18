@@ -3,7 +3,15 @@ import CurrentPage, {
   Props as CurrentPageProps,
 } from "./pages/CurrentPage.vue";
 
-export interface Props extends CurrentPageProps {}
+/**
+ * NOTE: Could not write the code as `export interface Props extends CurrentPageProps {}`.
+ *       At that time, it was interpreted by vue-loader that the Props were empty.
+ */
+export interface Props {
+  actionName: CurrentPageProps["actionName"];
+  controllerPath: CurrentPageProps["controllerPath"];
+  initialPageData: CurrentPageProps["initialPageData"];
+}
 const props = defineProps<Props>();
 </script>
 
