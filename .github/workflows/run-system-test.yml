@@ -1,0 +1,17 @@
+on: [push]
+jobs:
+  run-system-test:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-ruby@v1
+        with:
+          ruby-version: "3.1.2"
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "16.16.0"
+      - run: gem install bundler -v 2.3.7
+      - run: bundle install
+      - run: npm ci
+      - run: npm run build
+      - run: SYSTEM_TEST_BROWSER_KIND=headless_chrome bin/rails test:system
