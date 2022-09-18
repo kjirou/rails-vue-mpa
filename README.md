@@ -1,24 +1,28 @@
-# README
+# rails-vue-mpa
+## :hammer_and_wrench: Development
+### Preparation
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- Install [Ruby](https://www.ruby-lang.org/).
+  - This version is defined in [.ruby-version](/.ruby-version).
+- Install [bundler](https://rubygems.org/gems/bundler).
+  - This version is defined in `BUNDLED WITH` of [Gemfile.lock](/Gemfile.lock).
+- Install [Node.js](https://nodejs.org/en/).
+  - This version is defined in [.nvmrc](/.nvmrc).
+- Install [Visual Studio Code (VSCode)](https://code.visualstudio.com/) with [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) plugin.
+  - Since the development server does not perform typechecking, it is inconvenient if the IDE does not do it.
+- Configure [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471) to Volar.
 
-Things you may want to cover:
+### Application Installation
 
-- Ruby version
+```bash
+git clone git@github.com:kjirou/rails-vue-mpa.git
+bundle install
+npm install
+```
 
-- System dependencies
+### Start of the development server
 
-- Configuration
-
-- Database creation
-
-- Database initialization
-
-- How to run the test suite
-
-- Services (job queues, cache servers, search engines, etc.)
-
-- Deployment instructions
-
-- ...
+```bash
+bundle exec rails server
+npm run watch
+```

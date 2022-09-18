@@ -1,28 +1,19 @@
-<script lang="ts">
-import { defineComponent } from "vue";
+<script setup lang="ts">
+import CurrentPage, { Props as CurrentPageProps } from "./pages/CurrentPage.vue";
 
-import Foo from "./Foo.vue";
-
-export default defineComponent({
-  components: {
-    foo: Foo,
-  },
-});
+export interface Props extends CurrentPageProps {}
+const props = defineProps<Props>();
 </script>
 
 <template>
   <h1>Rails Vue MPA</h1>
-  <foo
-    :a="'a'"
-    :b="'b'"
-    :f="(b) => (b ? 'T' : 'F')"
-    :o="{
-      a: 11,
-      b: {
-        b1: 222,
-        b2: 'b2',
-      },
-    }"
-    :x="1"
+  <ul>
+    <li>controllerPath = {{ controllerPath }}</li>
+    <li>actionName = {{ actionName }}</li>
+  </ul>
+  <CurrentPage
+    :controller-path="props.controllerPath"
+    :action-name="props.actionName"
+    :initial-page-data="props.initialPageData"
   />
 </template>

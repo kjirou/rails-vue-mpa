@@ -1,6 +1,9 @@
 class ArticlesController < ApplicationController
   def index
-    # TODO: Configure it as default render.
-    render html: '', layout: true
+    render_frontend(page_data: { foo: 'This is articles#index.'})
+  end
+
+  def new
+    render_frontend
   end
 end
