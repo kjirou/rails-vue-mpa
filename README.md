@@ -1,5 +1,9 @@
 # rails-vue-mpa
+
+![run-frontend-tests](https://github.com/kjirou/rails-vue-mpa/actions/workflows/run-frontend-tests.yml/badge.svg)
+
 ## :hammer_and_wrench: Development
+
 ### Preparation
 
 - Install [Ruby](https://www.ruby-lang.org/).

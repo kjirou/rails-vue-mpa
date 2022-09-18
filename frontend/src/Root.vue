@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import CurrentPage, { Props as CurrentPageProps } from "./pages/CurrentPage.vue";
+import CurrentPage, {
+  Props as CurrentPageProps,
+} from "./pages/CurrentPage.vue";
 
 export interface Props extends CurrentPageProps {}
 const props = defineProps<Props>();
