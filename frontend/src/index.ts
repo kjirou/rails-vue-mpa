@@ -9,28 +9,29 @@ import Root, { Props as RootProps } from "./Root.vue";
 type RootPropsType = {
   actionName: RootProps["actionName"];
   controllerPath: RootProps["controllerPath"];
+  initialPageData: RootProps["initialPageData"];
 };
 
 /**
- * @todo Extracts and returns initial props.
+ * @todo Extracts and returns initial data from Rails.
  */
-const extractDataFromRails = (
-  vueRootElement: HTMLElement
-): {
-  actionName: string;
-  controllerPath: string;
-} => {
+const extractDataFromRails = (vueRootElement: HTMLElement): RootPropsType => {
   const controllerPath = vueRootElement.getAttribute("data-controller-path");
   const actionName = vueRootElement.getAttribute("data-action-name");
-  if (controllerPath !== null && actionName !== null) {
+  const rawInitialPageData = vueRootElement.getAttribute("data-initial-page-data");
+  if (
+    controllerPath !== null &&
+    actionName !== null &&
+    rawInitialPageData !== null
+  ) {
+    const initialPageData = JSON.parse(rawInitialPageData);
     return {
       controllerPath,
       actionName,
+      initialPageData,
     };
   }
-  throw new Error(
-    "data-controller-path and data-action-name are not set on the root element of Vue."
-  );
+  throw new Error("The data Rails is passing to Vue is invalid.");
 };
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -38,10 +39,12 @@ document.addEventListener("DOMContentLoaded", () => {
   if (vueRootElement === null) {
     throw new Error("Can not find the destination of Vue's `app.mount()`.");
   }
-  const { controllerPath, actionName } = extractDataFromRails(vueRootElement);
+  const { controllerPath, actionName, initialPageData } =
+    extractDataFromRails(vueRootElement);
   const rootProps: RootPropsType = {
     controllerPath,
     actionName,
+    initialPageData,
   };
   const app = createApp(Root, rootProps);
   app.mount(vueRootElement);

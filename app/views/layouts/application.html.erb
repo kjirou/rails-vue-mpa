@@ -14,6 +14,7 @@
       id: 'vue-root',
       'data-controller-path': controller_path,
       'data-action-name': action_name,
+      'data-initial-page-data': @page_data.to_json.html_safe,
     ) %>
   </body>
 </html>

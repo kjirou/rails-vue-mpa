@@ -4,6 +4,7 @@ import CurrentPage from "./pages/CurrentPage.vue";
 export interface Props {
   actionName: string;
   controllerPath: string;
+  initialPageData: Object;
 }
 
 const props = defineProps<Props>();
@@ -18,5 +19,6 @@ const props = defineProps<Props>();
   <CurrentPage
     :controller-path="props.controllerPath"
     :action-name="props.actionName"
+    :initial-page-data="props.initialPageData"
   />
 </template>

@@ -5,6 +5,7 @@ import Articles_NewPage from "./articles/New.vue";
 interface Props {
   actionName: string;
   controllerPath: string;
+  initialPageData: Object;
 }
 const props = defineProps<Props>();
 
@@ -36,5 +37,5 @@ const currentPage = findPage(props.controllerPath, props.actionName);
 </script>
 
 <template>
-  <component :is="currentPage" />
+  <component :is="currentPage" :initial-page-data="props.initialPageData" />
 </template>

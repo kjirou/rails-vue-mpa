@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   def index
-    render_frontend
+    render_frontend(page_data: { foo: 'This is articles#index.'})
   end
 
   def new
