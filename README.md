@@ -1,5 +1,7 @@
 # rails-vue-mpa
+
 ## :hammer_and_wrench: Development
+
 ### Preparation
 
 - Install [Ruby](https://www.ruby-lang.org/).

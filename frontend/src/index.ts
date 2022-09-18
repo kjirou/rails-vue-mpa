@@ -18,7 +18,9 @@ type RootPropsType = {
 const extractDataFromRails = (vueRootElement: HTMLElement): RootPropsType => {
   const controllerPath = vueRootElement.getAttribute("data-controller-path");
   const actionName = vueRootElement.getAttribute("data-action-name");
-  const rawInitialPageData = vueRootElement.getAttribute("data-initial-page-data");
+  const rawInitialPageData = vueRootElement.getAttribute(
+    "data-initial-page-data"
+  );
   if (
     controllerPath !== null &&
     actionName !== null &&
