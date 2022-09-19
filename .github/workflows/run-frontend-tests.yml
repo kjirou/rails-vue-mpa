@@ -11,3 +11,7 @@ jobs:
       - run: npm run prettier:check
       - run: npm run typecheck
       - run: npm run build
+      - name: Check for differences in shared schema
+        run: |
+          npm run schema-to-ts
+          git diff --exit-code --quiet
