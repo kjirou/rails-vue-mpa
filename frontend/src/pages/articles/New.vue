@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { Articles_NewPage } from "../../dummy-interfaces";
+import { Articles_New_PageData } from "../../../../schemata/generated/pages/articles/new";
 
 interface Props {
-  initialPageData: Articles_NewPage;
+  initialPageData: Articles_New_PageData;
 }
 const props = defineProps<Props>();
 </script>

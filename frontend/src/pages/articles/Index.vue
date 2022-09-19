@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { Articles_IndexPage } from "../../dummy-interfaces";
+import { Articles_Index_PageData } from "../../../../schemata/generated/pages/articles/index";
 import Foo from "../../components/Foo.vue";
 
 interface Props {
-  initialPageData: Articles_IndexPage;
+  initialPageData: Articles_Index_PageData;
 }
 const props = defineProps<Props>();
 </script>
