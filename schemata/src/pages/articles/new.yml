@@ -1,0 +1,20 @@
+$schema: http://json-schema.org/draft-04/schema#
+title: Articles_New_PageData
+type: object
+properties:
+  a:
+    type: string
+  b:
+    type: object
+    properties:
+      x:
+        type: number
+      y:
+        type: number
+    additionalProperties: false
+    required:
+      - x
+additionalProperties: false
+required:
+  - a
+  - b

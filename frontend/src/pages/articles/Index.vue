@@ -1,8 +1,9 @@
 <script setup lang="ts">
+import { Articles_Index_PageData } from "../../../../schemata/generated/pages/articles/index";
 import Foo from "../../components/Foo.vue";
 
 interface Props {
-  initialPageData: Object;
+  initialPageData: Articles_Index_PageData;
 }
 const props = defineProps<Props>();
 </script>
@@ -10,7 +11,11 @@ const props = defineProps<Props>();
 <template>
   <h2>articles/Index.vue</h2>
   <h3>Initial Data</h3>
-  <pre>{{ JSON.stringify(props.initialPageData, null, 2) }}</pre>
+  <ul>
+    <li>foo = {{ props.initialPageData.foo }}</li>
+    <li>bar.x = {{ props.initialPageData.bar.x }}</li>
+    <li>bar.y = {{ props.initialPageData.bar.y }}</li>
+  </ul>
   <Foo
     :a="'a'"
     :b="'b'"

@@ -1,6 +1,7 @@
 {
   "scripts": {
     "build": "webpack --mode=production --node-env=production",
+    "schema-to-ts": "node ./frontend/scripts/convert-json-schema-to-typescript.js",
     "prettier:check": "prettier --check .",
     "prettier:write": "prettier --write .",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -13,6 +14,9 @@
   "devDependencies": {
     "@webpack-cli/generators": "^2.5.0",
     "css-loader": "^6.7.1",
+    "glob": "^8.0.3",
+    "js-yaml": "^4.1.0",
+    "json-schema-to-typescript": "^11.0.2",
     "prettier": "2.7.1",
     "sass": "^1.54.9",
     "sass-loader": "^13.0.2",
