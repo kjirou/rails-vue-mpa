@@ -1,6 +1,7 @@
 {
   "scripts": {
     "build": "webpack --mode=production --node-env=production",
+    "schema-to-ts": "node ./frontend/scripts/convert-json-schema-to-typescript.js",
     "prettier:check": "prettier --check .",
     "prettier:write": "prettier --write .",
     "test": "echo \"Error: no test specified\" && exit 1",

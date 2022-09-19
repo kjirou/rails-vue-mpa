@@ -1,0 +1,20 @@
+$schema: http://json-schema.org/draft-04/schema#
+title: Articles_Index_PageData
+type: object
+properties:
+  foo:
+    type: string
+  bar:
+    type: object
+    properties:
+      x:
+        type: number
+      y:
+        type: number
+    additionalProperties: false
+    required:
+      - x
+additionalProperties: false
+required:
+  - foo
+  - bar
