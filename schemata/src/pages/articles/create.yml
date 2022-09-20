@@ -1,5 +1,0 @@
-$schema: http://json-schema.org/draft-04/schema#
-title: Articles_Create_PageData
-type: object
-properties:
-additionalProperties: false

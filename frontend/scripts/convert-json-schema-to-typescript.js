@@ -9,6 +9,8 @@ const schemataDir = path.resolve(projectRoot, "schemata");
 const srcDir = path.resolve(schemataDir, "src");
 const generatedDir = path.resolve(schemataDir, "generated");
 
+// TODO: If src files are deleted, generated files are also deleted.
+
 const srcFiles = glob.sync(`/**/*.yml`, {
   root: srcDir,
 });
