@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Articles_CreatePage from "./articles/Create.vue";
 import Articles_IndexPage from "./articles/Index.vue";
 import Articles_NewPage from "./articles/New.vue";
 
@@ -14,6 +15,7 @@ const createPageId = (controllerPath: string, actionName: string): string => {
 };
 
 const pages = {
+  [createPageId("articles", "create")]: Articles_CreatePage,
   [createPageId("articles", "index")]: Articles_IndexPage,
   [createPageId("articles", "new")]: Articles_NewPage,
 } as const;

@@ -9,6 +9,11 @@ const props = defineProps<Props>();
 
 <template>
   <h2>articles/New.vue</h2>
+  <div>
+    <form method="post" action="/articles">
+      <button type="submit">Post to create</button>
+    </form>
+  </div>
   <h3>Initial Data</h3>
   <ul>
     <li>a = {{ props.initialPageData.a }}</li>

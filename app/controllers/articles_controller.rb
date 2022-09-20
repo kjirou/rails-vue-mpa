@@ -18,4 +18,8 @@ class ArticlesController < ApplicationController
       },
     })
   end
+
+  def create
+    render_frontend()
+  end
 end
