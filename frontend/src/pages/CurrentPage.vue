@@ -9,6 +9,7 @@ export interface Props {
   csrfParam: string;
   csrfToken: string;
   initialPageData: Object;
+  pageName: string | null;
 }
 const props = defineProps<Props>();
 
@@ -26,8 +27,12 @@ const pages = {
  * @todo Receives `pages` as an argument, not as a closure.
  *       I could not define correctly the `pages` type.
  */
-const findPage = (controllerPath: string, actionName: string) => {
-  const pageId = createPageId(controllerPath, actionName);
+const findPage = (
+  controllerPath: string,
+  actionName: string,
+  pageName: string | null
+) => {
+  const pageId = createPageId(controllerPath, pageName ?? actionName);
   // TODO: TypeScript determines that `pages[pageId]` always returns a value.
   if (pages.hasOwnProperty(pageId) === false) {
     throw new Error(
@@ -37,7 +42,11 @@ const findPage = (controllerPath: string, actionName: string) => {
   return pages[pageId];
 };
 
-const currentPage = findPage(props.controllerPath, props.actionName);
+const currentPage = findPage(
+  props.controllerPath,
+  props.actionName,
+  props.pageName
+);
 const currentPageProps = {
   csrfParam: props.csrfParam,
   csrfToken: props.csrfToken,

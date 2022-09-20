@@ -16,6 +16,7 @@ export interface Props {
   csrfParam: CurrentPageProps["csrfParam"];
   csrfToken: CurrentPageProps["csrfToken"];
   initialPageData: CurrentPageProps["initialPageData"];
+  pageName: CurrentPageProps["pageName"];
 }
 const props = defineProps<Props>();
 </script>

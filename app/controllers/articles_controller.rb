@@ -20,6 +20,16 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    render_frontend()
+    if params[:foo] != nil && params[:foo] != ''
+      render_frontend()
+    else
+      render_frontend(page_name: 'new', page_data: {
+        a: 'This is articles#create, but renders articles#new.',
+        b: {
+          x: 123,
+          y: 456,
+        }
+      })
+    end
   end
 end

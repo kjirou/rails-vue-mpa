@@ -12,6 +12,7 @@ type RootPropsType = {
   csrfParam: RootProps["csrfParam"];
   csrfToken: RootProps["csrfToken"];
   initialPageData: RootProps["initialPageData"];
+  pageName: RootProps["pageName"];
 };
 
 /**
@@ -20,6 +21,7 @@ type RootPropsType = {
 const extractDataFromRails = (vueRootElement: HTMLElement): RootPropsType => {
   const controllerPath = vueRootElement.getAttribute("data-controller-path");
   const actionName = vueRootElement.getAttribute("data-action-name");
+  const pageName = vueRootElement.getAttribute("data-page-name");
   const csrfParam = vueRootElement.getAttribute("data-csrf-param");
   const csrfToken = vueRootElement.getAttribute("data-csrf-token");
   const rawInitialPageData = vueRootElement.getAttribute(
@@ -36,6 +38,7 @@ const extractDataFromRails = (vueRootElement: HTMLElement): RootPropsType => {
     return {
       controllerPath,
       actionName,
+      pageName,
       csrfParam,
       csrfToken,
       initialPageData,
