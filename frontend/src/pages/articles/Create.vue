@@ -1,10 +1,7 @@
 <script setup lang="ts">
-import { Articles_Create_PageData } from "../../../../schemata/generated/pages/articles/create";
+import { pagePropsValidation } from "./../../types";
 
-interface Props {
-  initialPageData: Articles_Create_PageData;
-}
-const props = defineProps<Props>();
+const props = defineProps(pagePropsValidation);
 </script>
 
 <template>

@@ -1,11 +1,16 @@
 <script setup lang="ts">
+import { PropType } from "vue";
 import { Articles_Index_PageData } from "../../../../schemata/generated/pages/articles/index";
+import { pagePropsValidation } from "./../../types";
 import Foo from "../../components/Foo.vue";
 
-interface Props {
-  initialPageData: Articles_Index_PageData;
-}
-const props = defineProps<Props>();
+const props = defineProps({
+  ...pagePropsValidation,
+  initialPageData: {
+    type: Object as PropType<Articles_Index_PageData>,
+    required: true,
+  },
+});
 </script>
 
 <template>

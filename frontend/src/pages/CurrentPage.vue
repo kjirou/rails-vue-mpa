@@ -6,6 +6,8 @@ import Articles_NewPage from "./articles/New.vue";
 export interface Props {
   actionName: string;
   controllerPath: string;
+  csrfParam: string;
+  csrfToken: string;
   initialPageData: Object;
 }
 const props = defineProps<Props>();
@@ -36,8 +38,14 @@ const findPage = (controllerPath: string, actionName: string) => {
 };
 
 const currentPage = findPage(props.controllerPath, props.actionName);
+const currentPageProps = {
+  csrfParam: props.csrfParam,
+  csrfToken: props.csrfToken,
+  initialPageData: props.initialPageData,
+};
 </script>
 
+<!-- NOTE: The "component" tag can not typecheck props. -->
 <template>
-  <component :is="currentPage" :initial-page-data="props.initialPageData" />
+  <component :is="currentPage" v-bind="currentPageProps" />
 </template>

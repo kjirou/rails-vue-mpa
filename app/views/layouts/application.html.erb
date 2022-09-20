@@ -3,7 +3,6 @@
   <head>
     <title>RailsVueMpa</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= frontend_javascript_tag 'webpacked.js' %>
@@ -14,6 +13,8 @@
       id: 'vue-root',
       'data-controller-path': controller_path,
       'data-action-name': action_name,
+      'data-csrf-param': request_forgery_protection_token,
+      'data-csrf-token': form_authenticity_token,
       'data-initial-page-data': @page_data.to_json.html_safe,
     ) %>
   </body>
