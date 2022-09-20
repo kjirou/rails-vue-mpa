@@ -11,11 +11,7 @@
   <body>
     <%= tag.div(
       id: 'vue-root',
-      'data-controller-path': controller_path,
-      'data-action-name': action_name,
-      'data-csrf-param': request_forgery_protection_token,
-      'data-csrf-token': form_authenticity_token,
-      'data-initial-page-data': @page_data.to_json.html_safe,
+      **vue_root_data_attributes(@page_data)
     ) %>
   </body>
 </html>
